@@ -61,3 +61,4 @@ class APICaller(AgentBase):
 
 
  
+register_agent("api_caller", APICaller)
