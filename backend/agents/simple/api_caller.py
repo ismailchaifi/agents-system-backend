@@ -4,6 +4,7 @@ import requests
 from urllib.parse import urlparse
 
 
+@register_agent("api_caller")
 class APICaller(AgentBase):
     """Agent that performs HTTP requests.
 
@@ -59,4 +60,5 @@ class APICaller(AgentBase):
             return response.text
 
 
+ 
 register_agent("api_caller", APICaller)
