@@ -2,6 +2,7 @@ import json
 from backend.agents.base import AgentBase
 from backend.agents.registry import register_agent
 
+@register_agent("data_parser")
 class DataParserAgent(AgentBase):
 
     def validate(self):
@@ -27,6 +28,3 @@ class DataParserAgent(AgentBase):
             data = {k: v for k, v in data.items() if v is not None}
 
         return data
-
-
-register_agent("data_parser", DataParserAgent)
