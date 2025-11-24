@@ -2,20 +2,23 @@ AGENT_REGISTRY = {}
 
 
 def register_agent(name):
-    """Register an agent class under `name`.
-
-    Usage:
-    - As a decorator: `@register_agent("my_agent")` above the class definition.
     """
-    if name is None:
-        raise ValueError("register_agent requires a name when used as a decorator")
+    Décorateur pour enregistrer une classe d'agent sous un nom donné.
 
-    def _decorator(cls):
+    Exemple d'utilisation :
+    
+    @register_agent("data_parser")
+    class DataParserAgent(AgentBase):
+        ...
+    """
+
+    def decorator(cls):
         AGENT_REGISTRY[name] = cls
         return cls
 
-    return _decorator
+    return decorator
 
 
 def get_agent(name):
+    """Récupère une classe d'agent à partir de son nom."""
     return AGENT_REGISTRY.get(name)
