@@ -1,6 +1,6 @@
 import json
-from agents.base import AgentBase
-from agents.registry import register_agent
+from backend.agents.base import AgentBase
+from backend.agents.registry import register_agent
 
 @register_agent("data_parser")
 class DataParserAgent(AgentBase):
