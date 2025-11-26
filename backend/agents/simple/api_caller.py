@@ -58,7 +58,3 @@ class APICaller(AgentBase):
             return response.json()
         except ValueError:
             return response.text
-
-
- 
-register_agent("api_caller", APICaller)
